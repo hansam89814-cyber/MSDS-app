@@ -1,0 +1,4 @@
+chromium
+fonts-noto-cjk
+fonts-noto-core
+fonts-noto-extra
