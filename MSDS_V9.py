@@ -114,6 +114,8 @@ with c2:
         format_func=lambda k: f"{C.LANG_NAMES[k]}  ·  신뢰도: {D.meta['reliability'][k]}")
     if "km" in langs:
         st.warning("크메르어는 원어민 검수 전 번역입니다. 현장 게시 전에 반드시 원어민 확인을 받으세요.")
+    if "si" in langs:
+        st.warning("싱할라어는 화면 제목 등 고정 문구만 번역되어 있고(원어민 검수 전), 위험·예방조치 문장은 비어 있습니다. 아래 입력창에 검수된 번역을 넣거나, 현장 게시 전에 반드시 원어민 확인을 받으세요.")
     if "vi" in langs:
         st.info("베트남어는 현지 근로자 확인을 권장합니다.")
 

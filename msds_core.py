@@ -14,9 +14,9 @@ HERE = Path(__file__).resolve().parent
 DICT_PATH = HERE / "msds_dictionary.json"
 USER_DICT_PATH = HERE / "user_dictionary.json"
 
-FOREIGN = ["en", "zh", "vi", "km", "ru"]
-LANG_NAMES = {"en": "영어", "zh": "중국어", "vi": "베트남어", "km": "캄보디아어(크메르어)", "ru": "러시아어"}
-LANG_ATTR = {"ko": "ko", "en": "en", "zh": "zh-CN", "vi": "vi", "km": "km", "ru": "ru"}
+FOREIGN = ["en", "zh", "vi", "km", "ru", "si"]
+LANG_NAMES = {"en": "영어", "zh": "중국어", "vi": "베트남어", "km": "캄보디아어(크메르어)", "ru": "러시아어", "si": "싱할라어(스리랑카)"}
+LANG_ATTR = {"ko": "ko", "en": "en", "zh": "zh-CN", "vi": "vi", "km": "km", "ru": "ru", "si": "si"}
 
 # 항목 개수: (기본, 최대)  - 요청하신 기준
 LIMITS = {"handling": (4, 4), "storage": (4, 4), "eye": (2, 2), "skin": (2, 2),
@@ -1052,6 +1052,7 @@ html,body{margin:0;padding:0;color:#111;background:#fff;-webkit-print-color-adju
 .doc:last-child{break-after:auto;page-break-after:auto}
 [lang=zh-CN]{font-family:"Microsoft YaHei","Noto Sans CJK SC","PingFang SC","SimSun",sans-serif}
 [lang=vi],[lang=ru],[lang=en]{font-family:"Segoe UI","Malgun Gothic","Noto Sans","Arial",sans-serif}
+[lang=si]{font-family:"Nirmala UI","Iskoola Pota","Noto Sans Sinhala","Noto Serif Sinhala",sans-serif}
 [lang=km]{font-family:"Khmer UI","Leelawadee UI","Noto Sans Khmer","DaunPenh","Khmer OS",sans-serif}
 .lg{font-weight:700;font-size:12px;margin:0 0 .5mm}
 h1{font-size:25px;text-align:center;margin:0 0 1.5mm;line-height:1.25}
