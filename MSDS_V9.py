@@ -17,7 +17,24 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import msds_core as C
 from msds_assets import GHS_ASSETS, PPE_ASSETS
 
-st.set_page_config(page_title="MSDS 관리요령·경고표지 V9", layout="wide")
+_HERE = Path(__file__).resolve().parent
+_LOGO = _HERE / "ci_logo.png"
+_FAV = _HERE / "favicon.png"
+_SITE = "전주 오성대우 주택재건축 정비사업"
+st.set_page_config(page_title="MSDS 관리요령·경고표지", page_icon=str(_FAV) if _FAV.exists() else None, layout="wide")
+st.markdown("""<style>
+.block-container{padding-top:1.6rem}
+.hdr-site{font-size:1.05rem;font-weight:700;color:#212121;margin:.35rem 0 0}
+.hdr-bar{height:4px;background:#F01428;margin:.5rem 0 1rem;border-radius:2px}
+</style>""", unsafe_allow_html=True)
+
+
+def _header(title):
+    if _LOGO.exists():
+        st.image(str(_LOGO), width=340)
+    st.markdown(f'<div class="hdr-site">{_SITE}</div><div class="hdr-bar"></div>', unsafe_allow_html=True)
+    st.title(title)
+
 try:
     import pdfplumber  # noqa: F401
 except Exception:
@@ -33,7 +50,7 @@ def _gate():
         pw = ""
     if not pw or st.session_state.get("_auth_ok"):
         return
-    st.title("MSDS 관리요령 · 경고표지")
+    _header("MSDS 관리요령 · 경고표지")
     x = st.text_input("비밀번호", type="password")
     if x and hmac.compare_digest(x.encode(), str(pw).encode()):
         st.session_state["_auth_ok"] = True
@@ -66,7 +83,7 @@ with st.sidebar:        # 서버가 다시 시작되면 입력한 번역이 지�
         except Exception as _ex:
             st.error(f"불러오지 못했습니다: {_ex}")
 
-st.title("MSDS → 화학물질 관리요령 · 경고표지 (PDF)")
+_header("MSDS → 화학물질 관리요령 · 경고표지 (PDF)")
 st.caption("원본 MSDS 문장은 줄이거나 고치지 않고 '선택'만 합니다. 외국어는 검수된 사전에서만 가져오며, 사전에 없으면 비워 둡니다.")
 
 D = C.Dictionary()
