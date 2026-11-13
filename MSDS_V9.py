@@ -23,7 +23,7 @@ _FAV = _HERE / "favicon.png"
 _SITE = "전주 오성대우 주택재건축 정비사업"
 st.set_page_config(page_title="MSDS 관리요령·경고표지", page_icon=str(_FAV) if _FAV.exists() else None, layout="wide")
 st.markdown("""<style>
-.block-container{padding-top:1.6rem}
+.block-container{padding-top:4.5rem}
 .hdr-site{font-size:1.05rem;font-weight:700;color:#212121;margin:.35rem 0 0}
 .hdr-bar{height:4px;background:#F01428;margin:.5rem 0 1rem;border-radius:2px}
 </style>""", unsafe_allow_html=True)
